@@ -1,0 +1,36 @@
+h1{color:#041052;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;} 
+
+ h2{
+  color: black;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 28px;
+ }
+ 
+.banner-card {
+  height: 300px;
+  overflow: hidden;
+  border-radius: 12px;
+}
+body{
+  font-family:  Georgia, 'Times New Roman', Times, serif;
+  color: black;
+}
+
+
+.banner-card img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  filter: brightness(65%);
+}
+
+.banner-card .card-title {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.banner-card .card-text {
+  font-size: 1rem;
+}
+

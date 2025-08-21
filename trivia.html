@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style_steam.css">
+   
+</head>
+<body>
+    <nav aria-label="Menú principal">
+        
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="inicio.html">Aulas STEAM</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link active" href="index.html">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="steam.html"> STEAM </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="proyectos.html"> Iniciativas y Proyectos </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="trivia.html"> Trivia </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contacto.html"> Contacto </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<section id="trivia">
+  <h2>Trivia</h2>
+  <p>¡Pon a prueba tus conocimientos sobre STEAM respondiendo estas preguntas!</p>
+
+  <div id="quiz-container">
+    <div class="question">
+      <p><b>1.</b> ¿Qué significa la sigla STEAM?</p>
+      <label><input type="radio" name="q1" value="true"> Ciencia, Tecnología, Ingeniería, Artes y Matemáticas</label><br>
+      <label><input type="radio" name="q1" value="false"> Sociales, Tecnología, Educación, Arte y Música</label>
+    </div>
+
+    <div class="question">
+      <p><b>2.</b> ¿Cuál de estas NO es un área de STEAM?</p>
+      <label><input type="radio" name="q2" value="false"> Ciencia</label><br>
+      <label><input type="radio" name="q2" value="true"> Deportes</label><br>
+      <label><input type="radio" name="q2" value="false"> Ingeniería</label>
+    </div>
+
+    <div class="question">
+      <p><b>3.</b> El enfoque STEAM busca principalmente...</p>
+      <label><input type="radio" name="q3" value="false"> Aprender solo teoría</label><br>
+      <label><input type="radio" name="q3" value="true"> Integrar disciplinas y fomentar la creatividad</label><br>
+      <label><input type="radio" name="q3" value="false"> Separar materias</label>
+    </div>
+
+    <div class="question">
+      <p><b>4.</b> ¿Dónde podemos encontrar información confiable sobre el enfoque STEAM en Colombia?</p>
+      <label><input type="radio" name="q4" value="true"> Colombia Aprende</label><br>
+      <label><input type="radio" name="q4" value="false"> Instagram</label><br>
+      <label><input type="radio" name="q4" value="false"> Banco de la República</label>
+    </div>
+
+    <div class="question">
+      <p><b>5.</b> Podemos decir que el enfoque en educación STEAM sirve para transformar socialmente una comunidad</p>
+      <label><input type="radio" name="q5" value="true"> Sí </label><br>
+      <label><input type="radio" name="q5" value="false"> No </label><br>
+      <label><input type="radio" name="q5" value="false"> Tal vez </label>
+    </div>
+
+    <div class="question">
+      <p><b>6.</b> Podemos encontrar el enfoque STEAM en las zonas rurales.</p>
+      <label><input type="radio" name="q6" value="true"> Sí </label><br>
+      <label><input type="radio" name="q6" value="false"> No </label><br>
+      <label><input type="radio" name="q6" value="false"> Tal vez </label>
+    </div>
+
+    <button onclick="calculateScore()">Terminé</button>
+    <p id="result"></p>
+  </div>
+</section>
+
+<script>
+function calculateScore() {
+  let totalQuestions = 6;
+  let correctAnswers = 0;
+
+  for (let i = 1; i <= totalQuestions; i++) {
+    let radios = document.getElementsByName("q" + i);
+    for (let radio of radios) {
+      if (radio.checked && radio.value === "true") {
+        correctAnswers++;
+      }
+    }
+  }
+
+  let percentage = (correctAnswers / totalQuestions) * 100;
+  let resultText = "✔ Obtuviste " + correctAnswers + " de " + totalQuestions +
+                   " respuestas correctas (" + percentage.toFixed(0) + "%). ";
+
+  // Condiciones de calidad
+  if (percentage >= 90) {
+    resultText += "😎 Te pusiste la 10, sos lo mejor.";
+  } else if (percentage >= 60) {
+    resultText += "👍 Bien hecho, pero puedes mejorar.";
+  } else {
+    resultText += "🤕 NooOoOOoOoOooo la pOLitZIa";
+  }
+
+  document.getElementById("result").innerText = resultText;
+}
+</script>
+
+<footer class="bg-primary text-white text-center py-3 mt-5">
+  <div class="container">
+    <p class="mb-1 small">&copy; 2025 Educación STEAM en Colombia. Todos los derechos reservados.</p>
+    <p class="mb-2 small">Desarrollado con apoyo e iniciativas de Talento Tech.</p>
+    <div>
+  </footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
